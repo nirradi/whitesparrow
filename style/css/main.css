@@ -1,0 +1,13 @@
+#terminal {
+  background-color: #333333;
+  height: 100%;
+  white-space: pre-line;
+  overflow: auto;
+  font-family: "Courier New", Courier, monospace; }
+
+.terminal-input {
+  width: 100%;
+  color: #339933; }
+
+.terminal-output {
+  color: #339933; }
