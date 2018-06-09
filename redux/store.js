@@ -5,13 +5,15 @@ import {
 } from 'redux';
 
 import outputReducer from './outputReducer';
+import commandStackReducer from './commandStackReducer';
 
 
 import thunk from 'redux-thunk';
 
 
 let reducers = combineReducers({
-    output: outputReducer
+    output: outputReducer,
+	availableCommands: commandStackReducer,
 });
 
 export function configureStore(initialState) {  
@@ -23,6 +25,13 @@ export function configureStore(initialState) {
   return store;
 };
 
-const store = configureStore({output: []}); 
+const store = configureStore({
+		output: [],
+		availableCommands: {
+			'?' : 'help',
+			'help': 'help',
+		}
+		
+	}); 
 
 export default store;

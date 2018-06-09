@@ -2,7 +2,7 @@
 
 import Terminal from '../components/Terminal';
 import { connect } from 'react-redux';
-import actions from '../engine/actions';
+import {exec} from '../engine/commandEngine';
 
 const mapStateToProps = (state, ownProps) => ({
 	output: state.output
@@ -11,8 +11,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        inputEntered: (arg) => { 
-			dispatch(actions.echo(arg)); 
+        inputEntered: (args) => { 
+			dispatch(exec(args));
 		}
     }
 }
