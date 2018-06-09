@@ -4,18 +4,21 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "keycode": "^2.2.0",
     "next": "^6.0.3",
     "node-sass": "^4.9.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-redux": "^5.0.7"
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {},
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-	"build-css": "node-sass --include-path style/scss style/scss/main.scss static/main.css"
+    "build-css": "node-sass --include-path style/scss style/scss/main.scss static/main.css"
   },
   "author": "\u001b[A\u001b[B\u001b[D",
   "license": "ISC"

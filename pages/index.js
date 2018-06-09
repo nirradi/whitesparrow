@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Terminal from '../components/Terminal';
+import Terminal from '../containers/TerminalContainer';
 import Head from 'next/head';
-
-
-	
+import store from '../redux/store.js';	
+import { Provider } from 'react-redux';  
 
 class App extends Component {
     render() {
@@ -13,7 +12,9 @@ class App extends Component {
 				<link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css" />
 				<link rel="stylesheet" href="static/main.css" />
 			</Head>
-            <Terminal/>
+			<Provider store = {store}>
+				<Terminal/>
+			</Provider>
 		</div>
         );
     }

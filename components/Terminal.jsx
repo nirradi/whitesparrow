@@ -26,7 +26,7 @@ class Terminal extends Component {
 }
 
 Terminal.defaultProps = {
-	output: ['hello'],
+	output: ['[no output]'],
 	availableCommands: {'abc' : 123},
 	inputEntered: () => {},
 	inputDisabled: false,

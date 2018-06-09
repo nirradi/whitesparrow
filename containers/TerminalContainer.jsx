@@ -1,14 +1,19 @@
+'use strict';
+
 import Terminal from '../components/Terminal';
 import { connect } from 'react-redux';
-import commandEngine from '../gamestate/commandEngine';
+import actions from '../engine/actions';
+
 const mapStateToProps = (state, ownProps) => ({
-    terminal: state.gameState
+	output: state.output
 });
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        inputEntered: commandEngine.runCommand
+        inputEntered: (arg) => { 
+			dispatch(actions.echo(arg)); 
+		}
     }
 }
 
