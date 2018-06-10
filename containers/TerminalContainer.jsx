@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import {exec} from '../engine/commandEngine';
 
 const mapStateToProps = (state, ownProps) => ({
-	output: state.output
+    output: state.output,
+    prompt: state.terminal.prompt,
 });
 
 

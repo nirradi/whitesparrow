@@ -30,7 +30,7 @@ Terminal.defaultProps = {
 	availableCommands: {'abc' : 123},
 	inputEntered: () => {},
 	inputDisabled: false,
-	prompt: ">>>",
+	prompt: ">",
 	
 }
 

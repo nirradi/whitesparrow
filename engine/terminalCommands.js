@@ -1,8 +1,10 @@
 'use strict';
-import echo from './actions';
 
-export default {
-	'echo' : (args) => {
-		store.dispatch(echo(args));
-	}
+import actions from './actions';
+import store from '../redux/store';
+
+var commands = {
+	'help' : (args) => { store.dispatch(actions.echo('These are the available commands')); }
 }
+
+export default commands;

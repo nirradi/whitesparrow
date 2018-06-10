@@ -12,8 +12,11 @@
 
 .terminal-input {
 	width:100%;
-	color:$terminal-text;
+    color:$terminal-text;
+    font-size:100%;
 	input {
-		color:$terminal-text;
+        color:$terminal-text;
+        font-size:100%;
+        font-family: "Courier New", Courier, monospace;
     }
 }

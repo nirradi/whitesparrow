@@ -6,6 +6,8 @@ import {
 
 import outputReducer from './outputReducer';
 import commandStackReducer from './commandStackReducer';
+import terminalStateReducer from './terminalStateReducer';
+import initialState         from '../levels/initialState';
 
 
 import thunk from 'redux-thunk';
@@ -13,7 +15,8 @@ import thunk from 'redux-thunk';
 
 let reducers = combineReducers({
     output: outputReducer,
-	availableCommands: commandStackReducer,
+    availableCommands: commandStackReducer,
+    terminal: terminalStateReducer,
 });
 
 export function configureStore(initialState) {  
@@ -25,13 +28,6 @@ export function configureStore(initialState) {
   return store;
 };
 
-const store = configureStore({
-		output: [],
-		availableCommands: {
-			'?' : 'help',
-			'help': 'help',
-		}
-		
-	}); 
+const store = configureStore(initialState); 
 
 export default store;
