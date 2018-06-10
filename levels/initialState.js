@@ -7,6 +7,10 @@ export default {
         'quit': 'quit',
     },
     terminal: {
-    prompt: '>>> ',
+        prompt: '>>> ',
+    },
+    levels: {
+        currentLevel: 0
     }
 };
+

@@ -7,23 +7,27 @@ import {
 import outputReducer from './outputReducer';
 import commandStackReducer from './commandStackReducer';
 import terminalStateReducer from './terminalStateReducer';
+import levelReducer from './levelReducer';
+import levelMiddleware from './levelMiddleware';
 import initialState         from '../levels/initialState';
+
 
 
 import thunk from 'redux-thunk';
 
 
 let reducers = combineReducers({
-    output: outputReducer,
+    output: outputReducer,  
     availableCommands: commandStackReducer,
     terminal: terminalStateReducer,
+    levels: levelReducer,
 });
 
 export function configureStore(initialState) {  
   const store = createStore(
     reducers,
     initialState,
-    applyMiddleware(thunk)
+    applyMiddleware(thunk, levelMiddleware),
   )
   return store;
 };
