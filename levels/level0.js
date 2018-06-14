@@ -1,13 +1,14 @@
 'use strict';
+import gameState from './gameState';
 
 export default () => {
     return [
         {
             condition: (state, action) => {
-                return (action.type == 'EXEC' && action.args == 'login')
+                return (state.program[0] == 'login' && action.output == "Access Granted")
             },
             action: () => {
-                alert('you win!');
+                gameState.terminalCommands.push('mail');
             }
 
         }

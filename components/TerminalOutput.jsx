@@ -5,8 +5,8 @@ class TerminalOutput extends React.Component {
     
     render() {
         let displayItems = [];
-        this.props.value.forEach(function(outputItem) {
-            displayItems.push(<div>{outputItem}</div>)
+        this.props.value.forEach(function(outputItem, index) {
+            displayItems.push(<div key={index}>{outputItem}</div>)
         })
         return (
             <div className='terminal-output'>

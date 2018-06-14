@@ -2,16 +2,12 @@
 
 import actions from './actions';
 import store from '../redux/store';
-import {runCommand} from './commands';
+import programRegistry from '../programs/programRegistry'
 
 function exec(args) {
 	return (dispatch, getState) => {
-			dispatch(actions.exec(args, getState().terminal.prompt));
-			args = args.split(' ');
-			if(args[0] in getState().availableCommands)
-				return runCommand(getState().availableCommands[args[0]], args);	
-			else
-				return dispatch(actions.echo('bad command'));
+		store.dispatch(actions.input(args));
+		programRegistry[getState().program[0]].run(args, store.getState());
 	}
 }
 

@@ -5,7 +5,7 @@ import {
 } from 'redux';
 
 import outputReducer from './outputReducer';
-import commandStackReducer from './commandStackReducer';
+import programStackReducer from './programStackReducer';
 import terminalStateReducer from './terminalStateReducer';
 import levelReducer from './levelReducer';
 import levelMiddleware from './levelMiddleware';
@@ -18,7 +18,7 @@ import thunk from 'redux-thunk';
 
 let reducers = combineReducers({
     output: outputReducer,  
-    availableCommands: commandStackReducer,
+    program: programStackReducer,
     terminal: terminalStateReducer,
     levels: levelReducer,
 });

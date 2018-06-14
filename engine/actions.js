@@ -7,11 +7,21 @@ export default {
 			output: args
 		}
 	},
-	exec: (args, prompt) => {
+	exec: (program) => {
 		return {
 			type: 'EXEC',
-			args: args,
-			output: prompt + args
+			program: program
+		}
+	},
+	quit: () => {
+		return {
+			type: 'QUIT', 
+		}
+	},
+	input: (args) => {
+		return {
+			type: 'INPUT',
+			output: args
 		}
 	}
 
